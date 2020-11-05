@@ -1,5 +1,5 @@
 # Bounding_Shape_Tool
-A tool useful for bounding circles around an object. This tool can be used for labelling images for Neural Network Training.
+A tool useful for bounding circles around an object. This tool can be used for bounding images for Neural Network Training.
 Tips:
 - The images are recommended to be squares before passing into the tool to avoid distortion.
 ## Instructions

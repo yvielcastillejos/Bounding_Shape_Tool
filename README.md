@@ -4,7 +4,7 @@ A tool useful for bounding circles around an object. This tool can be used for l
 If one wants to use this tool:
 - Clone this repository
 - Install pygame
-- Install math libraries such as numpy, scipy, and matplotlib.
+- Install math libraries such as Numpy, Scipy, and Matplotlib.
 - In ```config.py```, change the directory of the images you want to label with bounding circles (under ```path_to_imgs```)
 - In ```config.py```, change the directory where you want the bounded images to be saved (under ```path_to_save```)
 - Note that making the directory ```path_to_img``` and ```path_to_save``` the same path, the original image will be overwritten by the labelled image.

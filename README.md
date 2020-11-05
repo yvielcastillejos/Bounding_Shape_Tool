@@ -19,4 +19,9 @@ If one wants to use this tool:
 |```buttons.py ```| Functions for rendering the buttons and text|
 
 ## Demo
+A demo as shown:
+<img src = "https://github.com/yvielcastillejos/Bounding_Shape_Tool/upload" width = "600" height = "600">
 
+## Next Steps
+- I can add the option to use bounding squares instead of circles.
+- This was inspired by coin counter project.

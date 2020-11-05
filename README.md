@@ -20,7 +20,7 @@ If one wants to use this tool:
 
 ## Demo
 A demo as shown:
-<img src = "https://github.com/yvielcastillejos/Bounding_Shape_Tool/upload" width = "600" height = "600">
+<img src = "https://github.com/yvielcastillejos/Bounding_Shape_Tool/blob/main/Bound.gif" width = "600" height = "600">
 
 ## Next Steps
 - I can add the option to use bounding squares instead of circles.

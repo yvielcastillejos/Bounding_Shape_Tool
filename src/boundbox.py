@@ -20,9 +20,10 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
            sys.exit()
 
        elif event.type == pygame.KEYDOWN:
+           keys = pygame.key.get_pressed() 
            if (event.key == pygame.K_RETURN):
                for i in range(0,len(todraw)):
-                     pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),2)
+                     pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),bor_size)
                      screen.blit(surface, (0,0))
                img = pygame.surfarray.pixels3d(screen)
                img = img[20:S_WIDTH+20,20:S_HEIGHT+20,:]
@@ -37,28 +38,28 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
                    redorad+= [rad[-1]]
                    rad = rad[:-1]
                for i in range(0,len(todraw)):
-                    pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),2)
+                    pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),bor_size)
                screen.blit(surface, (0,0))
                pygame.display.update()
-           elif (event.key == pygame.K_r):
+           elif (event.key == pygame.K_r) or (keys[pygame.K_r]):
                if len(redo) >0:
                    todraw+=[redo[-1]]
                    rad+=[redorad[-1]]
                    redo = redo[:-1]
                    redorad = redorad[:-1]
                for i in range(0,len(todraw)):
-                    pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),2)
+                    pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),bor_size)
                screen.blit(surface, (0,0))
                pygame.display.update()
-           elif (event.key == pygame.K_RIGHT):
+           elif (event.key == pygame.K_RIGHT)or (keys[pygame.K_RIGHT]):
                prevind = index
                index = (index+ 1)%len(pictures)          
-           elif (event.key == pygame.K_LEFT):
+           elif (event.key == pygame.K_LEFT)or (keys[pygame.K_LEFT]):
                prevind = index
                index = (index-1)%len(pictures)
            elif (event.key == pygame.K_SPACE):
                for i in range(0,len(todraw)):
-                     pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),2)
+                     pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),bor_size)
                      screen.blit(surface, (0,0))
                img = pygame.surfarray.pixels3d(screen)
                img = img[20:S_WIDTH+20,20:S_HEIGHT+20,:]
@@ -74,7 +75,6 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
            if pos != None and  pos2[0]<(S_WIDTH+20) and pos2[1]<S_HEIGHT+20:
                pos2 = event.pos
                radius = sqrt((pos[0] - pos2[0])**2+ (pos[1] - pos2[1])**2)//2
-               print(radius)
                todraw += [(int((pos[0]+pos2[0])/2), int((pos[1]+pos2[1])/2))]
                rad += [radius]
                pos = None
@@ -85,7 +85,7 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
                pos3 = event.pos
                if (pos3[0] > 568 and pos3[0] < 618) and (pos3[1] > 102 and pos3[1] < 152):
                    for i in range(0,len(todraw)):
-                        pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),2)
+                        pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),bor_size)
                         screen.blit(surface, (0,0))
                    img = pygame.surfarray.pixels3d(screen)
                    img = img[20:S_WIDTH+20,20:S_HEIGHT+20,:]
@@ -108,7 +108,7 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
                        redorad+= [rad[-1]]
                        rad = rad[:-1]
                    for i in range(0,len(todraw)):
-                       pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),2)
+                       pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),bor_size)
                    draw_buttons(surface,3)
                    text_render(surface, surface)
                    screen.blit(surface, (0,0))
@@ -124,7 +124,7 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
                        redo = redo[:-1]
                        redorad = redorad[:-1]
                    for i in range(0,len(todraw)):
-                       pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),2)
+                       pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),bor_size)
                    draw_buttons(surface,4)
                    text_render(surface, surface)
                    screen.blit(surface, (0,0))
@@ -157,7 +157,7 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
                    pygame.display.update()
                elif (pos3[0] > 548 and pos3[0] < 628) and (pos3[1] > 34 and pos3[1] < 74):
                    for i in range(0,len(todraw)):
-                        pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),2)
+                        pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),bor_size)
                         screen.blit(surface, (0,0))
                    img = pygame.surfarray.pixels3d(screen)
                    img = img[20:S_WIDTH+20,20:S_HEIGHT+20,:]
@@ -180,7 +180,7 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
            if event.type == pygame.MOUSEMOTION:
                     posx = event.pos
                     for i in range(0,len(todraw)):
-                            pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),2)
+                            pygame.draw.circle(surface, clr1, (todraw[i]), int(rad[i]),bor_size)
                             screen.blit(surface, (0,0))
                     r = pygame.Rect((20, 20),(S_WIDTH, S_HEIGHT))
                     radius = sqrt((pos[0] - posx[0])**2 + (pos[1] - posx[1])**2)//2
@@ -189,7 +189,7 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
                     pygame.draw.rect(surface, clr2, r3)
                     pygame.draw.rect(surface, clr2, r4)
                     screen.blit(surface, (0,0))
-                    pygame.draw.circle(surface, clr1, (int((pos[0]+posx[0])/2), int((pos[1]+posx[1])/2)), int(radius),2)
+                    pygame.draw.circle(surface, clr1, (int((pos[0]+posx[0])/2), int((pos[1]+posx[1])/2)), int(radius), bor_size)
                     screen.blit(surface, (0,0))
                     draw_buttons(surface,1)
                     pygame.draw.rect(surface, clr2, r1)

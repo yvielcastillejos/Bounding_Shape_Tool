@@ -10,9 +10,12 @@ S_WIDTH = config.Screen['S_WIDTH']
 S_HEIGHT = config.Screen['S_HEIGHT']
 GRIDSIZE = config.Screen['GRIDSIZE']
 
+# Circle radius and colour:
+clr1 = config.colour['clr1']
+bor_size = config.misc["border_size"]
+
 # colour
 clr2 = config.colour['clr2']
-clr1 = config.colour['clr1']
 selected = config.colour['selected']
 unselected = config.colour['unselected']
 

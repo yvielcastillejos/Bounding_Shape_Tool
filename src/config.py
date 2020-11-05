@@ -2,7 +2,8 @@
 
 misc = dict(
     path_to_imgs = "/Users/yvielcastillejos/python/bounding_shape/images" , 
-    path_to_save = "/Users/yvielcastillejos/python/bounding_shape/images"
+    path_to_save = "/Users/yvielcastillejos/python/bounding_shape/images" ,
+    border_size = 4
 )
 
 Screen = dict(

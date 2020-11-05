@@ -49,7 +49,7 @@ def main():
 
     myfont = pygame.font.SysFont("fontname", 50)
     while True:
-         clock.tick(120)
+         clock.tick(60)
          draw_buttons(surface,8)
          text_render(surface, surface)
          pos, todraw, rad,redo,redorad,index, prevind = event(surface, pos, todraw,rad, screen, redo,redorad, index,pictures, prevind)

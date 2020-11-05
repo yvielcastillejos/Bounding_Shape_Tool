@@ -10,9 +10,9 @@ from buttons import*
 
 def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prevind):
     r1 = pygame.Rect((S_HEIGHT+20,0),(170, S_WIDTH+150))
-    r2 = pygame.Rect((0,S_WIDTH+20),(S_HEIGHT, 170))
-    r3 = pygame.Rect((0,0),(20, S_WIDTH+170))
-    r4 = pygame.Rect((0,0),(S_HEIGHT, 20)) 
+    r2 = pygame.Rect((0,S_WIDTH+20),(S_HEIGHT+20, 170))
+    r3 = pygame.Rect((0,0),(20, S_WIDTH+200))
+    r4 = pygame.Rect((0,0),(S_HEIGHT+200, 20)) 
     for event in pygame.event.get():
 
        if event.type == pygame.QUIT:

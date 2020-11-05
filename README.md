@@ -21,7 +21,7 @@ If one wants to use this tool:
 ## Demo
 A demo as shown:                                
 <img src = "https://github.com/yvielcastillejos/Bounding_Shape_Tool/blob/main/Bound.gif" width = "500" height = "500">
-
+- Note that once it is saved, the circles can no longer be undone
 ## Next Steps
 - I can add the option to use bounding squares instead of circles.
 - This was inspired by coin counter project.

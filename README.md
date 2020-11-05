@@ -1,7 +1,9 @@
 # Bounding_Shape_Tool
-A tool useful for bounding circles around an object. This tool can be used for bounding images for Neural Network Training.
+A tool useful for bounding circles around an object. This tool can be used for bounding images for Neural Network Training.              
 Tips:
 - The images are recommended to be squares before passing into the tool to avoid distortion.
+- For best experience, make the  ```path_to_img``` and ```path_to_save``` the same path.
+- Adjust the border size and colour of circle in  ```config.py```
 ## Instructions
 If one wants to use this tool:
 - Clone this repository

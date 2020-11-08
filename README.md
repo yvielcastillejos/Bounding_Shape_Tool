@@ -33,7 +33,7 @@ If one wants to use this tool:
 
 ## Demo
 A demo as shown:                                
-<img src = "https://github.com/yvielcastillejos/Bounding_Shape_Tool/blob/main/images/updated.gif" width = "500" height = "500">
+<img src = "https://github.com/yvielcastillejos/Bounding_Shape_Tool/blob/main/images/updated2.gif" width = "500" height = "500">
 
 ## Txt File
 The txt file contains the x,y and radius coordinates of the circle with respect to the original image size. This is the "label" part when training a Neural Network and it also serves as a checkpoint for the GUI so that the user can continue modifying the circles at any time.

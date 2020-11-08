@@ -86,7 +86,7 @@ def main():
              img_dir = pygame.transform.scale(img_dir,(S_WIDTH,S_HEIGHT))
              surface.blit(img_dir,(20,20))
              if index != prevind:
-                 print(index)
+                 print(f"This is Picture {index}")
                  todraw, rad, redo, redorad = [],[],[],[]
                  match = txt[index]
                  print(match)

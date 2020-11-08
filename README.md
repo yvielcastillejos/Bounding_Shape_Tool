@@ -36,8 +36,8 @@ A demo as shown:
 <img src = "https://github.com/yvielcastillejos/Bounding_Shape_Tool/blob/main/images/updated2.gif" width = "500" height = "500">
 
 ## Txt File
-The txt file contains the x,y and radius coordinates of the circle with respect to the original image size. This is the "label" part when training a Neural Network and it also serves as a checkpoint for the GUI so that the user can continue modifying the circles at any time.
-<img src = "https://github.com/yvielcastillejos/Bounding_Shape_Tool/blob/main/images/Screen%20Shot%202020-11-08%20at%206.08.32%20PM.png" width = "500" height = "500">
+The txt file contains the x,y and radius coordinates of the circle with respect to the original image size. This is the "label" part when training a Neural Network and it also serves as a checkpoint for the GUI so that the user can continue modifying the circles at any time.                     
+<img src = "https://github.com/yvielcastillejos/Bounding_Shape_Tool/blob/main/images/Screen%20Shot%202020-11-08%20at%206.08.32%20PM.png" width = "300" height = "300">
 ## Next Steps
 - I can add the option to use bounding squares instead of circles.
 - This was inspired by coin counter project.

@@ -16,11 +16,10 @@ def main():
     screen = pygame.display.set_mode(size = (S_WIDTH+150,S_HEIGHT+50), flags = 0)
     surface = screen.convert()
     pictures = folder_img(dir)
-    print(pictures[0])
     img_dir = None
     index, prevind = 0, 0
     if len(pictures) >  0:
-        img_dir = pygame.image.load(f"{dir}/{pictures[0]}")
+        img_dir = pygame.image.load(f"/Users/yvielcastillejos/python/bounding_shape/images/{pictures[0]}")
         img_dir = pygame.transform.scale(img_dir,(500,500))
 
     r = pygame.Rect((20, 20),(S_WIDTH, S_HEIGHT))
@@ -50,14 +49,14 @@ def main():
 
     myfont = pygame.font.SysFont("fontname", 50)
     while True:
-         clock.tick(60)
+         clock.tick(120)
          draw_buttons(surface,8)
          text_render(surface, surface)
          pos, todraw, rad,redo,redorad,index, prevind = event(surface, pos, todraw,rad, screen, redo,redorad, index,pictures, prevind)
          text1 = myfont.render("L1", 1, (96, 108, 118))
 
          if img_dir != None:
-             img_dir = pygame.image.load(f"{dir}/{pictures[index]}")
+             img_dir = pygame.image.load(f"/Users/yvielcastillejos/python/bounding_shape/images/{pictures[index]}")
              img_dir = pygame.transform.scale(img_dir,(500,500))
              surface.blit(img_dir,(20,20))
              if index != prevind:

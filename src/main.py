@@ -28,7 +28,7 @@ def main():
     index, prevind = 0, 0
     if len(pictures) >  0:
         img = plt.imread(f"{dir}/{pictures[0]}")
-        img_dir = pygame.image.load(f"{dir}/{pictures[0]}")
+        img_dir = pygame.image.load(f"{dir}/{pictures[0]}").convert()
         height = img.shape[0]
         width = img.shape[1]
         print(f"This image has original height {height} and width {width}")
@@ -76,7 +76,7 @@ def main():
     pos = None
     myfont = pygame.font.SysFont("fontname", 50)
     while True:
-         clock.tick(60)
+         clock.tick(90)
          draw_buttons(surface,8)
          text_render(surface, surface)
          pos, todraw, rad,redo,redorad,index, prevind,txt = event(surface, pos, todraw,rad, screen, redo,redorad, index,pictures, prevind, txt, height, width)
@@ -86,13 +86,13 @@ def main():
              img_dir = pygame.transform.scale(img_dir,(S_WIDTH,S_HEIGHT))
              surface.blit(img_dir,(20,20))
              if index != prevind:
-                 print(index)
+                 print(f"This is Picture {index}")
                  todraw, rad, redo, redorad = [],[],[],[]
                  match = txt[index]
                  print(match)
                  if len(pictures) >  0:
                     img = plt.imread(f"{dir}/{pictures[index]}")
-                    img_dir = pygame.image.load(f"{dir}/{pictures[index]}")
+                    img_dir = pygame.image.load(f"{dir}/{pictures[index]}").convert()
                     height = img.shape[0]
                     width = img.shape[1]
                     print(f"This image has original height {height} and width {width}")

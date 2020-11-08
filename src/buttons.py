@@ -4,6 +4,13 @@ import config
 # path
 dir = config.misc['path_to_imgs']
 dir_save =  config.misc['path_to_save']
+txtfolder = config.misc['path_to_label']
+txtsave = config.misc['path_to_save_label']
+if txtfolder == "" or txtfolder == " " or txtfolder == None:
+    txtfolder = dir
+if txtsave == "" or txtsave == " " or txtsave == None:
+    txtsave = dir_save
+
 
 # Screen
 S_WIDTH = config.Screen['S_WIDTH']
@@ -23,41 +30,44 @@ unselected = config.colour['unselected']
 def text_render(surface, screen):
         myfont = pygame.font.SysFont("fontname", 15)
         text2 = myfont.render("'save' and 'next':", 1, (0,0,0))
-        screen.blit(text2, (550,37))
+        screen.blit(text2, (S_WIDTH + 50,37))
         text2 = myfont.render("(spacebar)", 1, (0,0,0))
-        screen.blit(text2, (562,57))
+        screen.blit(text2, (S_WIDTH + 62,57))
         text1 = myfont.render("Save", 1, (0,0,0))
-        screen.blit(text1, (575,117))
+        screen.blit(text1, (S_WIDTH + 75,117))
         text1 = myfont.render("(Enter)", 1, (0,0,0))
-        screen.blit(text1, (575,127))
+        screen.blit(text1, (S_WIDTH + 75,127))
         text1 = myfont.render("Undo (d)", 1, (0,0,0))
-        screen.blit(text1, (575,217))
+        screen.blit(text1, (S_WIDTH + 75,217))
         text1 = myfont.render("Redo (r)", 1, (0,0,0))
-        screen.blit(text1, (575,317))
+        screen.blit(text1, (S_WIDTH + 75,317))
         text1 = myfont.render("Next (>)", 1, (0,0,0))
-        screen.blit(text1, (568,407))
+        screen.blit(text1, (S_WIDTH + 68,407))
         text1 = myfont.render("Previous (<)", 1, (0,0,0))
-        screen.blit(text1, (568,457))
+        screen.blit(text1, (S_WIDTH + 68,457))
+        myfont = pygame.font.SysFont("fontname", 20)
+        text1 = myfont.render("Press 'c' to clear (Can be undone by pressing 'r')", 1, (0,0,0))
+        screen.blit(text1, (20 ,0))
         return
 
-# render buttons
+# render buttons:
 def draw_buttons(surface,x):
-   r10 = pygame.Rect((548,34),(GRIDSIZE+35, GRIDSIZE-10))
+   r10 = pygame.Rect(((S_WIDTH + 48,34),(GRIDSIZE+35, GRIDSIZE-10)))
    pygame.draw.rect(surface,  selected, r10,6)
    pygame.draw.rect(surface, unselected, r10)
-   r = pygame.Rect((568,102),(GRIDSIZE, GRIDSIZE))
+   r = pygame.Rect(((S_WIDTH + 68,102),(GRIDSIZE, GRIDSIZE)))
    pygame.draw.rect(surface, unselected, r)
    pygame.draw.rect(surface, selected, r,5)
-   r1 = pygame.Rect((568,202),(GRIDSIZE, GRIDSIZE))
+   r1 = pygame.Rect(((S_WIDTH + 68,202),(GRIDSIZE, GRIDSIZE)))
    pygame.draw.rect(surface, unselected, r1)
    pygame.draw.rect(surface, selected, r1,5)
-   r2 = pygame.Rect((568,302),(GRIDSIZE, GRIDSIZE))
+   r2 = pygame.Rect(((S_WIDTH + 68,302),(GRIDSIZE, GRIDSIZE)))
    pygame.draw.rect(surface, unselected, r2)
    pygame.draw.rect(surface, selected , r2,5)
-   r3 = pygame.Rect((558,402),(GRIDSIZE+25, GRIDSIZE-25))
+   r3 = pygame.Rect(((S_WIDTH + 58,402),(GRIDSIZE+25, GRIDSIZE-25)))
    pygame.draw.rect(surface, unselected, r3)
    pygame.draw.rect(surface, selected , r3,5)
-   r4 = pygame.Rect((558,452),(GRIDSIZE+25, GRIDSIZE-25))
+   r4 = pygame.Rect(((S_WIDTH + 58,452),(GRIDSIZE+25, GRIDSIZE-25)))
    pygame.draw.rect(surface, unselected, r4)
    pygame.draw.rect(surface, selected , r4,5)
    margin = pygame.Rect((20,20),(S_WIDTH, S_HEIGHT))

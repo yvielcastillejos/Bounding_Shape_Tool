@@ -45,6 +45,9 @@ def text_render(surface, screen):
         screen.blit(text1, (S_WIDTH + 68,407))
         text1 = myfont.render("Previous (<)", 1, (0,0,0))
         screen.blit(text1, (S_WIDTH + 68,457))
+        myfont = pygame.font.SysFont("fontname", 20)
+        text1 = myfont.render("Press 'c' to clear (Can be undone by pressing 'r')", 1, (0,0,0))
+        screen.blit(text1, (20 ,0))
         return
 
 # render buttons:

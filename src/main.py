@@ -86,13 +86,13 @@ def main():
              img_dir = pygame.transform.scale(img_dir,(S_WIDTH,S_HEIGHT))
              surface.blit(img_dir,(20,20))
              if index != prevind:
+                 print(index)
                  todraw, rad, redo, redorad = [],[],[],[]
                  match = txt[index]
-
-
+                 print(match)
                  if len(pictures) >  0:
-                    img = plt.imread(f"{dir}/{pictures[0]}")
-                    img_dir = pygame.image.load(f"{dir}/{pictures[0]}")
+                    img = plt.imread(f"{dir}/{pictures[index]}")
+                    img_dir = pygame.image.load(f"{dir}/{pictures[index]}")
                     height = img.shape[0]
                     width = img.shape[1]
                     print(f"This image has original height {height} and width {width}")

@@ -74,6 +74,17 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
                prevind = index
                index = (index+ 1)%len(pictures)
 
+           elif (event.key == pygame.K_c):
+               if len(todraw)>0:
+                   redo= todraw
+                   todraw = []
+                   redorad = rad
+                   rad = []
+               screen.blit(surface, (0,0))
+               pygame.display.update()
+
+
+
        elif event.type == pygame.MOUSEBUTTONDOWN:
            pos2 = event.pos
            if pos != None and  pos2[0]<(S_WIDTH+20) and pos2[1]<S_HEIGHT+20:
@@ -219,7 +230,7 @@ def event(surface, pos, todraw,rad, screen, redo, redorad,  index,pictures, prev
 
 def folder_img(dir, txt):
    pictures = sorted(os.listdir(dir))
-   txtfiles = sorted(os.listdir(txtfolder))  
+   txtfiles = [] #sorted(os.listdir(txtfolder))  
    pic = []
    txt2 = []
    txt3 = []
@@ -230,15 +241,16 @@ def folder_img(dir, txt):
            pic.append(picture)
    test_jpg = [elem[:-3] for elem in pic]
    test_jpeg = [elem[:-4] for elem in pic]
-#   print(f"pic is {pic}")
    for pic2 in pic:
 #       print(pic2[-3:])
        if (pic2[:-4] not in test) and (pic2[-3:] == "jpg" or pic2[-3:] == "png"):
            txtfiles.append(f"{pic2[:-4]}.txt")
+  #         print("OK")
        elif pic2[:-5] not in test:
+ #          print("OK2")
            txtfiles.append(f"{pic2[:-5]}.txt")
    txtfiles = sorted(txtfiles)
- #  print(txtfiles)
+#   print(txtfiles)
    for txtf in txtfiles:
        if txtf[-4:] == ".csv" or txtf[-4:] == ".txt":
            txt2.append(txtf)
